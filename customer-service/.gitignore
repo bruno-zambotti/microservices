@@ -1,0 +1,25 @@
+# Compiled class file
+*.class
+/*.classpath
+/.classpath
+/.springBeans
+
+# Log file
+*.log
+
+# Package Files #
+*.jar
+
+# IntelliJ #
+.idea/
+customer-service.iml
+*.DS_Store
+*.iml
+/build
+target/
+
+# Others #
+/local.properties
+
+# Exceptions
+!maven-wrapper.jar

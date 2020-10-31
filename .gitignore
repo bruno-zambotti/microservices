@@ -1,0 +1,7 @@
+# Others
+.settings
+.project
+.idea/
+
+# Exceptions
+!maven-wrapper.jar

@@ -1,0 +1,595 @@
+{
+	"info": {
+		"_postman_id": "93c68fbf-2f9d-4d28-8a7d-ec985e2667ed",
+		"name": "microservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Customer",
+			"description": null,
+			"item": [
+				{
+					"name": "getAllCustomers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8081/microservices/v1/customer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"microservices",
+								"v1",
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCustomerById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8081/microservices/v1/customer/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"microservices",
+								"v1",
+								"customer",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createCustomer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"name\",\r\n\t\"surname\": \"surname\",\r\n\t\"birthDate\": \"12/10/1981\",\r\n\t\"gender\": \"M\",\r\n\t\"adress\": [{\r\n\t\t\t\"streetName\": \"streetName\",\r\n\t\t\t\"number\": 1,\r\n\t\t\t\"complement\": \"complement\",\r\n\t\t\t\"postalCode\": \"03325885\",\r\n\t\t\t\"city\": \"city\",\r\n\t\t\t\"province\": \"province\",\r\n\t\t\t\"country\": \"country\",\r\n\t\t\t\"type\": 1\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"streetName\": \"streetName\",\r\n\t\t\t\"number\": 2,\r\n\t\t\t\"complement\": \"complement\",\r\n\t\t\t\"postalCode\": \"03325885\",\r\n\t\t\t\"city\": \"city\",\r\n\t\t\t\"province\": \"province\",\r\n\t\t\t\"country\": \"country\",\r\n\t\t\t\"type\": 2\r\n\t\t}\r\n\t],\r\n\t\"phones\": [{\r\n\t\t\t\"number\": \"988562245\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"number\": \"25699785\"\r\n\t\t}\r\n\t]\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8081/microservices/v1/customer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"microservices",
+								"v1",
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCustomer",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"name\",\r\n\t\"surname\": \"surname\",\r\n\t\"birthDate\": \"11/12/1982\",\r\n\t\"gender\": \"F\",\r\n\t\"adress\": [{\r\n\t\t\t\"streetName\": \"streetName\",\r\n\t\t\t\"number\": 1,\r\n\t\t\t\"complement\": \"complement\",\r\n\t\t\t\"postalCode\": \"03325885\",\r\n\t\t\t\"city\": \"city\",\r\n\t\t\t\"province\": \"province\",\r\n\t\t\t\"country\": \"country\",\r\n\t\t\t\"type\": 1\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"streetName\": \"streetName\",\r\n\t\t\t\"number\": 2,\r\n\t\t\t\"complement\": \"complement\",\r\n\t\t\t\"postalCode\": \"03325885\",\r\n\t\t\t\"city\": \"city\",\r\n\t\t\t\"province\": \"province\",\r\n\t\t\t\"country\": \"country\",\r\n\t\t\t\"type\": 1\r\n\t\t}\r\n\t],\r\n\t\"phones\": [{\r\n\t\t\t\"number\": \"978562245\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"number\": \"24699785\"\r\n\t\t}\r\n\t]\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8081/microservices/v1/customer/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"microservices",
+								"v1",
+								"customer",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCustomer",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8081/microservices/v1/customer/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"microservices",
+								"v1",
+								"customer",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inventory",
+			"description": null,
+			"item": [
+				{
+					"name": "getInventory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8082/microservices/v1/inventory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"microservices",
+								"v1",
+								"inventory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getInventoryByProductId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8082/microservices/v1/inventory/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"microservices",
+								"v1",
+								"inventory",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createInventoryItemByProductId",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"productId\": 1,\n\t\"amount\": 2\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8082/microservices/v1/inventory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"microservices",
+								"v1",
+								"inventory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateInventoryItemByProductId",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"amount\": 3\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8082/microservices/v1/inventory/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"microservices",
+								"v1",
+								"inventory",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteInventoryItemByProductId",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8082/microservices/v1/inventory/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"microservices",
+								"v1",
+								"inventory",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"description": null,
+			"item": [
+				{
+					"name": "getAllProducts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8083/microservices/v1/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"microservices",
+								"v1",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProductById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8083/microservices/v1/product/17",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"microservices",
+								"v1",
+								"product",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createProduct",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"name\",\n\t\"description\":\"description\",\n    \"price\": 54.0\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8083/microservices/v1/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"microservices",
+								"v1",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProduct",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"name\",\n\t\"description\":\"description\",\n    \"price\": 54.5\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8083/microservices/v1/product/17",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"microservices",
+								"v1",
+								"product",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProduct",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8083/microservices/v1/product/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"microservices",
+								"v1",
+								"product",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"description": null,
+			"item": [
+				{
+					"name": "getAllOrders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8084/microservices/v1/order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"microservices",
+								"v1",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrdersById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8084/microservices/v1/order/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"microservices",
+								"v1",
+								"order",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteOrder",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8084/microservices/v1/order/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"microservices",
+								"v1",
+								"order",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateOrder",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"customerId\": 1,\r\n\t\"status\": 2,\r\n\t\"items\": [\r\n\t\t{ \"productId\": 1, \"quantity\": 2 },\r\n\t\t{ \"productId\": 2, \"quantity\": 2 }\r\n\t]\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8084/microservices/v1/order/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"microservices",
+								"v1",
+								"order",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createOrder",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"customerId\": 1,\r\n\t\"items\": [\r\n\t\t{ \"productId\": 5, \"quantity\": 26}\r\n\t]\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8084/microservices/v1/order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"microservices",
+								"v1",
+								"order"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

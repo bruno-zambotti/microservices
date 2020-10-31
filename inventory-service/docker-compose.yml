@@ -1,0 +1,59 @@
+version: '3'
+services:
+  db_server_2:
+    image: mysql:5.7
+    volumes:
+    - db_data:/var/lib/mysql
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+        max_attempts: 3
+    networks:
+    - net
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_DATABASE: inventory
+
+  api_server_2:
+    image: zambotti/inventory_service
+    volumes:
+    - service_data:/var/service
+    ports:
+    - 8082:8082
+    depends_on:
+    - db_server_2
+    #- fallback
+    deploy:
+      replicas: 3
+      restart_policy:
+        condition: on-failure
+        max_attempts: 3
+    networks:
+    - net
+
+  #fallback:
+  #  image: rabbitmq:management
+  #  command: ["rabbitmqadmin", "declare", "queue", "name=Queue", "durable=true"]
+  #  ports:
+  #  - 5672:5672
+  #  - 15672:15672
+  #  deploy:
+  #    replicas: 1
+  #    restart_policy:
+  #      condition: on-failure
+  #      max_attempts: 3
+  #  hostname: rabbitmq-master
+  #  volumes:
+  #  - fallback_data:/docker/rabbitmq/data:/var/lib/rabbitmq
+  #  networks:
+  #  - net
+    
+volumes:
+  db_data:
+  service_data:
+  #fallback_data:
+
+networks:
+  net:
+    external: true
