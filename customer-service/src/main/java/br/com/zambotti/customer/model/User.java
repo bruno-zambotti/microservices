@@ -6,16 +6,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 @Entity
-public class UserAuth {
+@Table(name = "USER_AUTH")
+public class User {
 
     @Id
-    @GeneratedValue(generator = "generator", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(initialValue = 1, name = "generator", sequenceName = "user_sequence")
-    @Column
     private Integer id;
-
     private String username;
     private String password;
 

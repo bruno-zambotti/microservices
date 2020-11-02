@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 
 import br.com.zambotti.customer.model.enums.AddressType;
 
@@ -17,13 +18,15 @@ import br.com.zambotti.customer.model.enums.AddressType;
 public class Address {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column
+	@GeneratedValue(generator = "generator", strategy = GenerationType.SEQUENCE)
+	@SequenceGenerator(name = "generator", sequenceName = "address_sequence", allocationSize = 1)
 	private Integer id;
 
 	private String street;
 	private Integer number;
 	private String complement;
+
+	@Column(name = "POSTAL_CODE")
 	private String postalCode;
 	private String city;
 	private String province;

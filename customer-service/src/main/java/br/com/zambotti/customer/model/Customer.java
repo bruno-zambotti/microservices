@@ -21,12 +21,13 @@ public class Customer {
 
 	@Id
 	@GeneratedValue(generator = "generator", strategy = GenerationType.SEQUENCE)
-	@SequenceGenerator(initialValue = 1, name = "generator", sequenceName = "customer_sequence")
-	@Column
+	@SequenceGenerator(name = "generator", sequenceName = "customer_sequence", allocationSize = 1)
 	private Integer id;
 
 	private String name;
 	private String surname;
+
+	@Column(name = "birth_date")
 	private Date birthDate;
 	private char gender;
 

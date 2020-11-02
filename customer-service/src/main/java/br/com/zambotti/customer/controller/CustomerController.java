@@ -55,7 +55,7 @@ public class CustomerController {
         LOGGER.info("Getting all customers ... ");
         List<Customer> customers = customerService.getAllCustomer();
         List<CustomerResponse> customerResponse = new ArrayList<>();
-        customers.stream().forEach(customer -> customerResponse.add(
+        customers.forEach(customer -> customerResponse.add(
                 getCustomerResponse(customer)));
 
         return ResponseEntity.ok(customerResponse);
