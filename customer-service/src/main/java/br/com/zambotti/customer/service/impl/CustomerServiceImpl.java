@@ -32,7 +32,7 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public Customer getCustomerById(Integer id) {
 		return customerRepository.findById(id).orElseThrow(() ->
-				new ResponseError(HttpStatus.NOT_FOUND, "Cliente não encontrado"));
+				new ResponseError(HttpStatus.NOT_FOUND, "Cliente nao encontrado"));
 	}
 
 	@Override

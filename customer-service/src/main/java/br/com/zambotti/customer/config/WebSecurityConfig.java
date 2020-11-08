@@ -48,9 +48,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
-                .authorizeRequests()
-                .antMatchers(HttpMethod.POST, "/users/**").permitAll()
-                .anyRequest().authenticated().and()
+                .authorizeRequests().antMatchers(HttpMethod.POST, "/users/**").permitAll()
+                .and().authorizeRequests().antMatchers("/db/**").permitAll()
+                .and().headers().frameOptions().sameOrigin()
+                .and().authorizeRequests().anyRequest().authenticated().and()
                 .exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint)
                 .and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
